@@ -30,7 +30,8 @@ FetchContent_MakeAvailable(googletest)
 target_include_directories(IndividualMiniproject PUBLIC 
     ${INCLUDE_PATHS} 
     include
-    /opt/homebrew/Cellar/asio/1.30.2/include
+    #/opt/homebrew/Cellar/asio/1.30.211
+    /opt/homebrew/opt/asio/include
 )
 
 target_link_libraries(IndividualMiniproject PRIVATE 
@@ -52,7 +53,8 @@ add_executable(IndividualMiniprojectTests
 target_include_directories(IndividualMiniprojectTests PRIVATE 
     ${INCLUDE_PATHS} 
     include
-    /opt/homebrew/Cellar/asio/1.30.2/include
+    #/opt/homebrew/opt/asio/1.30.2/include
+    /opt/homebrew/opt/asio/include
 )
 
 target_link_libraries(IndividualMiniprojectTests PRIVATE 
