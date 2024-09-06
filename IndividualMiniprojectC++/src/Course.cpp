@@ -1,3 +1,5 @@
+// Copyright (c) 2024 Programming Systems Lab @ Columbia University
+
 #include "Course.h"
 #include <iostream>
 #include <string>
