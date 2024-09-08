@@ -7,15 +7,15 @@
 #include <csignal>
 
 // Project Header
-#include "include/Course.h"
-#include "include/Department.h"
-#include "include/MyFileDatabase.h"
-#include "include/RouteController.h"
-#include "include/Globals.h"
-#include "include/MyApp.h"
+#include "Course.h"
+#include "Department.h"
+#include "MyFileDatabase.h"
+#include "RouteController.h"
+#include "Globals.h"
+#include "MyApp.h"
 
 // Third-party Header
-#include "external_libraries/Crow-1.2.0-Darwin/include/crow.h"
+#include "../external_libraries/Crow-1.2.0-Darwin/include/crow.h"
 
 /**
  *  Method to handle proper termination protocols 
