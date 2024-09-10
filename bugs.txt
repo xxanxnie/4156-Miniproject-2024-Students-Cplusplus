@@ -1,0 +1,71 @@
+# bugs.txt
+
+=== Course.cpp ===
+
+bug #1
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+bug #2
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+=== Department.cpp ===
+
+bug #1
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+bug #2
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+=== MyApp.cpp ===
+
+bug #1
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+bug #2
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+=== MyFileDatabase.cpp ===
+
+bug #1
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+bug #2
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+=== RouteController.cpp ===
+
+bug #1
+------
+    Issue:
+    Location:
+    Static Analyzer Name:
+
+bug #2
+------
+    Issue:
+    Location:
+    Static Analyzer Name:

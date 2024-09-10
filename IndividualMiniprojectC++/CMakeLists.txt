@@ -5,16 +5,17 @@ project(IndividualMiniproject)
 set(INCLUDE_PATHS external_libraries/boost_1_85_0 external_libraries/Crow-1.2.0-Darwin/include)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
 
 # Main project executable
 add_executable(IndividualMiniproject 
     src/main.cpp 
-    src/Course.cpp 
-    src/Department.cpp 
-    src/MyFileDatabase.cpp 
-    src/RouteController.cpp
-    src/MyApp.cpp
     src/Globals.cpp
+    src/Course.cpp
+    src/Department.cpp
+    src/MyApp.cpp
+    src/MyFileDatabase.cpp
+    src/RouteController.cpp
 )
 
 include(FetchContent)
@@ -43,11 +44,18 @@ enable_testing()
 
 # Test executable
 add_executable(IndividualMiniprojectTests
-  test/sample.cpp
-  test/CourseUnitTests.cpp
-  src/Course.cpp
-  src/Department.cpp
-  src/MyFileDatabase.cpp
+    #test/sample.cpp
+    test/CourseUnitTests.cpp
+    test/DepartmentUnitTests.cpp
+    test/MyAppUnitTests.cpp
+    test/MyFileDatabaseUnitTests.cpp
+    test/RouteControllerUnitTests.cpp
+
+    src/Course.cpp
+    src/Department.cpp
+    src/MyApp.cpp
+    src/MyFileDatabase.cpp
+    src/RouteController.cpp
 )
 
 target_include_directories(IndividualMiniprojectTests PRIVATE 
@@ -65,6 +73,27 @@ target_link_libraries(IndividualMiniprojectTests PRIVATE
 include(GoogleTest)
 gtest_discover_tests(IndividualMiniprojectTests)
 
+
+add_custom_target(
+    run_tests
+    COMMAND $<TARGET_FILE:IndividualMiniprojectTests>
+    DEPENDS IndividualMiniprojectTests
+    COMMENT "Running tests to generate coverage data"
+)
+
+# Add custom target for coverage analysis
+add_custom_target(
+    coverage
+    DEPENDS run_tests
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/CMakeFiles/IndividualMiniprojectTests.dir/src
+    COMMAND gcov *.cpp.gcno
+    COMMAND lcov --capture --directory . --output-file Coverage.info --ignore-errors inconsistent --filter range
+    COMMAND lcov --remove Coverage.info "/usr*" "include/" -o FilteredCoverage.info
+    COMMAND genhtml FilteredCoverage.info --output-directory UnitTestCoverageOutput --ignore-errors inconsistent --filter range 
+    COMMAND open UnitTestCoverageOutput/index.html
+    COMMENT "Generating code coverage report"
+)
+
 # Find the cpplint program
 find_program(CPPLINT cpplint)
 
@@ -78,8 +107,14 @@ if (CPPLINT)
         src/RouteController.cpp
         src/MyApp.cpp
         src/Globals.cpp
+
         test/sample.cpp
         test/CourseUnitTests.cpp
+        test/CourseUnitTests.cpp
+        test/DepartmentUnitTests.cpp
+        test/MyAppUnitTests.cpp
+        test/MyFileDatabaseUnitTests.cpp
+        test/RouteControllerUnitTests.cpp
     )
 
     # Custom target to run cpplint
