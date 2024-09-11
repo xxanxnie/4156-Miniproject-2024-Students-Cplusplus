@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Programming Systems Lab @ Columbia University
+// Copyright (c) 2024 Annie Xu @ Columbia University
 
 // C++ System Header
 #include <iostream>
