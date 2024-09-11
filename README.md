@@ -13,11 +13,12 @@ Coverage Tools:
 - GCOV: Coverage tool for C/C++ code  
 - LCOV: Graphical front-end for GCOV
 
-make clean
-cmake ..
-make
-make run_tests
-make coverage
+rm -rf  
+make clean  
+cmake ..  
+make  
+make run_tests  
+make coverage  
 
 
 # Static Analysis Tool

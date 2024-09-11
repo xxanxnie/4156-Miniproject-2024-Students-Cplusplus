@@ -14,7 +14,7 @@
  * @param capacity           The maximum number of students that can enroll in the course.
  */
 Course::Course(int capacity, const std::string& instructorName, const std::string& courseLocation, const std::string& timeSlot)
-    : enrollmentCapacity(capacity), enrolledStudentCount(500), courseLocation(courseLocation), instructorName(instructorName), courseTimeSlot(timeSlot) {}
+    : enrollmentCapacity(capacity), enrolledStudentCount(0), courseLocation(courseLocation), instructorName(instructorName), courseTimeSlot(timeSlot) {}
 
 /**
  * Constructs a default Course object with the default parameters.
@@ -29,8 +29,12 @@ Course::Course() : enrollmentCapacity(0), enrolledStudentCount(0), courseLocatio
  * @return true if the student is successfully enrolled, false otherwise.
  */
 bool Course::enrollStudent() {
-    enrolledStudentCount++;
-    return false; 
+    if (isCourseFull()) {       // course full, cannot enroll
+        return false; 
+    }
+
+    enrolledStudentCount++; 
+    return true; 
 }
 
 /**
@@ -39,8 +43,11 @@ bool Course::enrollStudent() {
  * @return true if the student is successfully dropped, false otherwise.
  */
 bool Course::dropStudent() {
-    enrolledStudentCount--;
-    return false; 
+    if (enrolledStudentCount <= 0) {    // no student to drop, cannot drop
+        return false; 
+    }
+    enrolledStudentCount--; 
+    return true;
 }
 
 std::string Course::getCourseLocation() const {
@@ -48,11 +55,11 @@ std::string Course::getCourseLocation() const {
 }
 
 std::string Course::getInstructorName() const {
-    return courseTimeSlot;
+    return instructorName;
 }
 
 std::string Course::getCourseTimeSlot() const {
-    return instructorName;
+    return courseTimeSlot;
 }
 
 std::string Course::display() const {
@@ -78,7 +85,7 @@ void Course::setEnrolledStudentCount(int count) {
 }
 
 bool Course::isCourseFull() const {
-    return enrollmentCapacity > enrolledStudentCount;
+    return enrollmentCapacity <= enrolledStudentCount;
 }
 
 void Course::serialize(std::ostream& out) const {
