@@ -4,15 +4,45 @@
 
 bug #1
 ------
-    Issue:
-    Location:
+    Issue: enrolledStudentCount initialized at 500, doesn't account for course capacity
+    Location: Course.cpp @ line 17 originally
     Static Analyzer Name:
+    Fix: initialized to 0, starting course with no students enrolled
 
 bug #2
 ------
-    Issue:
-    Location:
+    Issue: always true (full) if enrollmentCapacity > enrolledStudentCount 
+    Location: Course.cpp @ line 81 originally
     Static Analyzer Name:
+    Fix: reversed the logic, should be enrollmentCapacity <= enrolledStudentCount 
+
+bug #3
+------
+    Issue: logic error, doesn't check for if course is full while enrolling student
+    Location: Course.cpp @ line 31 originally
+    Static Analyzer Name:
+    Fix: check if course is full first, then enroll student
+
+bug #4
+------
+    Issue: logic error as above, doesn't check if no students enrolled
+    Location: Course.cpp @ line 41 originally
+    Static Analyzer Name:
+    Fix: check if no students enrolled, then drop student
+
+bug #4
+------
+    Issue: getInstructorName() return courseTimeSlot
+    Location: Course.cpp @ line 49 originally
+    Static Analyzer Name:
+    Fix: return instructorName
+
+bug #4
+------
+    Issue: getCourseTimeSlot() return instructorName
+    Location: Course.cpp @ line 53 originally
+    Static Analyzer Name:
+    Fix: return courseTimeSlot
 
 === Department.cpp ===
 
