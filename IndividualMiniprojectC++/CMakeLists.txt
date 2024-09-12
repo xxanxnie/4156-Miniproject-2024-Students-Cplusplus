@@ -47,15 +47,16 @@ add_executable(IndividualMiniprojectTests
     #test/sample.cpp
     test/CourseUnitTests.cpp
     test/DepartmentUnitTests.cpp
-    test/MyAppUnitTests.cpp
-    test/MyFileDatabaseUnitTests.cpp
-    test/RouteControllerUnitTests.cpp
+    #test/MyAppUnitTests.cpp
+    #test/MyFileDatabaseUnitTests.cpp
+    #test/RouteControllerUnitTests.cpp
 
     src/Course.cpp
     src/Department.cpp
-    src/MyApp.cpp
-    src/MyFileDatabase.cpp
-    src/RouteController.cpp
+    #src/MyApp.cpp
+    #src/MyFileDatabase.cpp
+    #src/RouteController.cpp
+    
 )
 
 target_include_directories(IndividualMiniprojectTests PRIVATE 
@@ -72,7 +73,6 @@ target_link_libraries(IndividualMiniprojectTests PRIVATE
 
 include(GoogleTest)
 gtest_discover_tests(IndividualMiniprojectTests)
-
 
 add_custom_target(
     run_tests

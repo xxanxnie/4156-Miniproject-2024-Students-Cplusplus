@@ -37,7 +37,7 @@ int Department::getNumberOfMajors() const {
  * @return The name of the department chair.
  */
 std::string Department::getDepartmentChair() const {
-    return "departmentChair"; 
+    return departmentChair; 
 }
 
 /**
@@ -60,7 +60,9 @@ void Department::addPersonToMajor() {
  * Decreases the number of majors in the department by one if it's greater than zero.
  */
 void Department::dropPersonFromMajor() {
-    numberOfMajors--;
+    if (numberOfMajors > 0) {
+        --numberOfMajors;
+    }
 }
 
 /**
