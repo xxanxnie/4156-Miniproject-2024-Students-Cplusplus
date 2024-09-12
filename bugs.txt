@@ -58,7 +58,7 @@ bug #2
     Issue: doesn't check for if number of major it greater than 0
     Location: Department.cpp @ line 63
     Static Analyzer Name:
-    Fix: 
+    Fix: included check to make sure major is greater than 0
 
 === MyApp.cpp ===
 
