@@ -30,14 +30,14 @@ bug #4
     Static Analyzer Name:
     Fix: check if no students enrolled, then drop student
 
-bug #4
+bug #5
 ------
     Issue: getInstructorName() return courseTimeSlot
     Location: Course.cpp @ line 49 originally
     Static Analyzer Name:
     Fix: return instructorName
 
-bug #4
+bug #6
 ------
     Issue: getCourseTimeSlot() return instructorName
     Location: Course.cpp @ line 53 originally
@@ -62,48 +62,6 @@ bug #2
 
 === MyApp.cpp ===
 
-bug #1
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
-
-bug #2
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
-
 === MyFileDatabase.cpp ===
 
-bug #1
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
-
-bug #2
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
-
 === RouteController.cpp ===
-
-bug #1
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
-
-bug #2
-------
-    Issue:
-    Location:
-    Static Analyzer Name:
-    Fix: 
