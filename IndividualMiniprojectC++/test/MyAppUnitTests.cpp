@@ -143,7 +143,6 @@ TEST_F(MyAppTestFixture, OverrideDatabase) {
 
     MyApp::overrideDatabase(newDatabase);
 
-    // Other departments a
     MyFileDatabase* database = MyApp::getDatabase();
     EXPECT_EQ(database, newDatabase);
 }

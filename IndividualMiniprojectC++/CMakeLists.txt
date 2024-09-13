@@ -49,7 +49,7 @@ add_executable(IndividualMiniprojectTests
     test/DepartmentUnitTests.cpp
     test/MyAppUnitTests.cpp
     test/MyFileDatabaseUnitTests.cpp
-    #test/RouteControllerUnitTests.cpp
+    test/RouteControllerUnitTests.cpp
 
     src/Course.cpp
     src/Department.cpp
