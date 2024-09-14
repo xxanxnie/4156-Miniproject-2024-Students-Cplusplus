@@ -1,12 +1,9 @@
 // Copyright (c) 2024 Annie Xu @ Columbia University
 
 #include <gtest/gtest.h>
-#include "RouteController.h"
 #include "MyApp.h"
-#include <gtest/gtest.h>
 #include "RouteController.h"
-#include "MyApp.h"
-#include "crow.h"
+#include "../external_libraries/Crow-1.2.0-Darwin/include/crow.h"
 
 class RouteControllerUnitTests : public ::testing::Test {
 protected:

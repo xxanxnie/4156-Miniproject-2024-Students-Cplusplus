@@ -13,18 +13,28 @@ Coverage Tools:
 - GCOV: Coverage tool for C/C++ code  
 - LCOV: Graphical front-end for GCOV
 
-rm -rf  
+rm -rf *
 make clean  
 cmake ..  
 make  
 make run_tests  
 make coverage  
 
-
 # Static Analysis Tool
  
- Cppcheck
- brew install cppcheck
- Cppcheck Plug-in in VS Code
+Done using Cppcheck:
 
+brew install cppcheck
 
+cd IndividualMiniprojectC++/src
+
+then run the following command in the terminal:
+cppcheck --enable=all --force \
+    --suppress=missingIncludeSystem \
+    --suppress=syntaxError \
+    --std=c++14 \
+    --suppress="*:../external_libraries/Crow-1.2.0-Darwin/*" \
+    --suppress="*:../external_libraries/boost_1_86_0/*" \
+    *.cpp > ../cppcheck-result.txt
+
+result of cppcheck will be outputed to cppcheck-result.txt
