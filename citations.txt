@@ -2,19 +2,9 @@
 
 Resource 1:
 https://dr-kino.github.io/2019/12/22/test-coverage-using-gtest-gcov-and-lcov/
-Usage:
 
 Resource 2: 
 https://dev.to/naveenkhasyap/generating-code-coverage-report-using-gnu-gcov-lcov-59p
-Usage:
 
-Resource 2: 
+Resource 3: 
 https://cppcheck.sourceforge.io/
-Usage:
-
-Resource 2: 
-Usage:
-
-
-
-
