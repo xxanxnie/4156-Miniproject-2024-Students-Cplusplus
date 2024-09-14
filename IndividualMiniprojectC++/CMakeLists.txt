@@ -127,27 +127,3 @@ if (CPPLINT)
 else()
     message(WARNING "cpplint not found! Skipping style checks.")
 endif()
-# Find cppcheck program
-find_program(CPPCHECK cppcheck)
-
-if (CPPCHECK)
-    # List of source files to be checked by cppcheck (project files only)
-    set(SOURCE_FILES
-        src/main.cpp 
-        src/Course.cpp 
-        src/Department.cpp 
-        src/MyFileDatabase.cpp 
-        src/RouteController.cpp
-        src/MyApp.cpp
-        src/Globals.cpp
-
-        test/CourseUnitTests.cpp
-        test/DepartmentUnitTests.cpp
-        test/MyAppUnitTests.cpp
-        test/MyFileDatabaseUnitTests.cpp
-        test/RouteControllerUnitTests.cpp
-    )
- 
-else()
-    message(WARNING "cppcheck not found! Skipping static analysis checks.")
-endif()

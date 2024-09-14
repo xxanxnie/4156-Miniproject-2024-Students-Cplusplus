@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 #include "MyApp.h"
 
-const std::string expectedDatabase = R"(For the CHEM department:
+static const char expectedDatabase[] = R"(For the CHEM department:
 CHEM 1403: 
 Instructor: Ruben M Savizky; Location: 309 HAV; Time: 6:10-7:25
 CHEM 1500: 
